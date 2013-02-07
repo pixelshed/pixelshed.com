@@ -1,0 +1,177 @@
+// Your custom settings file to override Foundation defaults
+@import "settings";
+
+// Comment out this import if you are customizing you imports below
+@import "foundation";
+
+// PixelShed Vars
+$lightgreen: #69d9d2;
+$darkgreen: #53ada7;
+$headingcolor: #333;
+$lightblue: #69bdd9;
+$darkblue: #5595aa;
+
+@mixin fade($prop, $time) {
+	transition: $prop $time;
+	-moz-transition: $prop $time; /* Firefox 4 */
+	-webkit-transition: $prop $time; /* Safari and Chrome */
+	-o-transition: $prop $time; /* Opera */ 	
+}
+
+h2.main {
+	text-align:center;
+	font-weight:normal;
+	font-family:"ComfortaaThin", sans-serif;
+	margin:50px 0;
+	color:$headingcolor;
+	font-size:40px;
+}
+
+h3 {
+	color:$headingcolor;
+	font-size:16px;
+}
+
+h4 {
+	color:$headingcolor;
+	font-size:14px;
+	text-transform:uppercase;
+}
+
+.text-link {
+	color:$lightblue;
+
+	&:hover {
+		color:$darkblue;
+		border-bottom:1px dotted $darkblue;
+	}
+}
+
+.button {
+	border-radius:10px;
+	background:#333;
+	border-color:#000;
+	margin-left:10px;
+
+	&:hover {
+		background:$lightblue;
+		border-color:$lightblue;
+	}
+}
+
+.home header {
+	position:relative;
+	height:inherit;
+
+	.bg-img {
+		position:relative;
+		top:0; left:0;
+		z-index:0;
+	}
+
+	.logo {
+		position:absolute;
+		z-index:1;	
+		height:105px;
+		overflow:hidden;
+		left:0px;
+		top:125px;
+		
+		h1 {
+			background:rgba(134, 215, 215, .8);
+			height:105px;
+			width:105px;			
+			float:left;	
+			margin:0;	
+			@include fade(background, 1s);
+		
+			a {
+				background:url(../images/pixelshed-logo.png) no-repeat center center;
+				overflow:hidden;
+				text-indent:-999px;
+				display:block;	
+				width:100%;
+				height:100%;	
+			}
+			&:hover {
+				background:rgba(0, 0, 0, .3)				
+			}
+		}
+
+		p {
+			background:rgba(255, 255, 255, .8);
+			height:105px;
+			padding:15px 15px 0 15px;
+			margin:0;
+			float:left;
+			color:$headingcolor;
+			font-size:35px;
+			width:50%;
+			line-height:33px;
+			font-family:"ComfortaaThin", sans-serif;
+		}		
+	}	
+}
+
+.nav-main {
+	margin:0;
+	position:relative;
+	top:-1px;
+
+	li {
+		@include fade(background, 0.5s);	
+	}
+	ul > li a:not(.button){
+		padding:0 25px;
+	}
+}
+
+.services-teaser {
+	padding:40px 0;
+	background:#efefef;
+
+	h4 {
+		float:left;
+		line-height:57px;
+
+		.icon {
+			float:left;
+			background:$lightgreen;
+			border-radius:50%;
+			width:58px;
+			height:58px;
+			margin-right:15px;
+		}
+	}
+
+	p {
+		text-align:justify;
+		clear:left;
+		color:#787878;
+	}
+
+	h5 {
+		font-family:"ComfortaaThin", sans-serif;
+		font-weight:normal;
+		color:$txtColor;
+		text-align:center;
+		margin:40px 0 0 0;
+		font-size:22px;
+		padding:0 20px;
+	}
+}
+
+.cta-bar {
+	background:#7c7c7c;
+	padding:30px;
+
+	h6 {
+		color:#fff;
+		text-align:center;
+		font-size:30px;
+		margin:0;
+		font-weight:normal;
+		font-family:"ComfortaaThin", sans-serif;
+	}
+}
+
